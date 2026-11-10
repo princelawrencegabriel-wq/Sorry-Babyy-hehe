@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Babyyy ♡</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffe0ec, #fff5f8, #ffd6e5);
+    color: #754257;
+    overflow-x: hidden;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ed8eae;
+    font-size: 22px;
+    animation: float 8s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 0.7; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Hero */
+header {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.hero {
+    background: rgba(255,255,255,0.8);
+    padding: 55px 30px;
+    border-radius: 30px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 10px 35px #d88da955;
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    color: #c65380;
+    font-size: clamp(40px, 8vw, 65px);
+    margin: 20px 0;
+}
+
+.hero p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    background: #d65f8c;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #b94070;
+    transform: scale(1.05);
+}
+
+/* Sections */
+section {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 40px 30px;
+    width: calc(100% - 30px);
+    background: rgba(255,255,255,0.85);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #d88da933;
+}
+
+h2 {
+    text-align: center;
+    color: #c65380;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.letter {
+    font-size: 17px;
+    line-height: 2;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+/* Notes */
+.notes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.note {
+    background: #fff0f5;
+    border: 1px solid #f5bfd2;
+    color: #a34469;
+    padding: 25px 15px;
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0;
+}
+
+.note:hover {
+    transform: translateY(-5px);
+    background: #ffe0eb;
+}
+
+.note h3 {
+    margin-bottom: 10px;
+}
+
+/* Promises */
+.promises {
+    list-style: none;
+    line-height: 2.2;
+    font-size: 17px;
+}
+
+.promises li::before {
+    content: "♡ ";
+    color: #d65f8c;
+    font-size: 20px;
+}
+
+/* Final */
+.final {
+    text-align: center;
+}
+
+.big-heart {
+    font-size: 65px;
+    color: #d65f8c;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+/* Note Popup */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #54283c99;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup-content {
+    background: #fff5f8;
+    padding: 35px;
+    border-radius: 25px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: appear 0.4s ease;
+}
+
+.popup-content h2 {
+    font-size: 27px;
+}
+
+.popup-content p {
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #a85d7b;
+}
+
+@media(max-width: 550px) {
+    .notes {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 30px 20px;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="hero">
+        <p>♡ A LITTLE SOMETHING FOR YOU ♡</p>
+
+        <h1>I'm Sorry,<br>Babyyy!</h1>
+
+        <p>
+            I made this little website just for you.
+            I hope you take your time reading everything
+            because every word comes from my heart.
+        </p>
+
+        <button onclick="scrollToLetter()">
+            Open My Heart ♡
+        </button>
+    </div>
+</header>
+
+<section id="letter">
+    <h2>My Letter For You ♡</h2>
+
+    <div class="letter">
+        <p>
+            Babyyyy, I want to say that I am truly sorry
+            for not giving you enough time and attention.
+            I'm sorry for the moments when I made you feel
+            like you weren't a priority.
+        </p>
+
+        <p>
+            I know that sometimes you just want my time,
+            my attention, and my presence. You don't always
+            need expensive things or grand surprises.
+            Sometimes you just want me to be there,
+            listen to your stories, and make you feel loved.
+        </p>
+
+        <p>
+            I'm sorry if I made you feel like you were
+            asking for too much. You're not, babyyy.
+            You deserve my time and effort.
+            You deserve to feel appreciated without
+            having to ask for it again and again.
+        </p>
+
+        <p>
+            I don't want to be someone who only says
+            "I love you" but forgets to show it.
+            I want my actions to match my words.
+            I want to make time for you even when
+            things get busy.
+        </p>
+
+        <p>
+            I know I cannot change what already happened,
+            but I can learn from it and do better.
+            I'm not asking you to forget everything
+            immediately. I just hope you can see
+            how sincere I am.
+        </p>
+
+        <p>
+            I love you so much, babyyyy.
+            I still want to hear about your day,
+            laugh with you, annoy you, and make
+            beautiful memories together.
+        </p>
+
+        <p>
+            Please remember that you are important to me.
+            I never want you to question whether
+            you deserve my time and attention.
+        </p>
+        
+        <p>
+            Hi babyyyyyy Cassandra Mendozaa Ammok ngaaaa 
+            maburod ka nukwa kenyak babyy poo masuron ag 
+            lalo no permi nga agay ayam latta ub ubraek po
+            babyyy tas adda pay tay time nga dika poo mapansinen
+            babyy poo ngem babyy poo ammon nga ammk nga lo-love kopoo
+            latta ikaww babyyy ken ammok nga ado pay dreams ta tun 
+            ag graduate ta babyyy pooo ken sana babyy poo ag grow latta rs
+            ta poo ken sorry babyy poo nno kanayon nak nga ag puyaat babyy poo 
+            kanayon nak poo nga papaanawa babyy poo ngem gratefull nak latta poo
+            babyyy kaseee urayy poo kastoy nak babyy poo ket adda ka latta poo 
+            side kopoo babyyy and haan nak poo nga ibati baby po thankkk youu poo hehe!!
+        </p>
+
+        <p>
+            ken babyyy i hope you know how much you mean to me.
+            even on ordinary days, you make me feel so happy just by being youu there babyyyy
+            im really thankful that i have yoou and  i doubt how much i love and 
+            appreciate yoouuuuuuuuuuuuuuuu babyyy!!
+        </p>
+
+        <p>
+            I'll always choose you babyyy, through the ups and down babyyy, and through the 
+            light and drark, anf through easy days and the difficult ones. no matter what life
+            brings babyyyy, i'll keep choosing youu babyyyyy!!!!!!
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Little Notes For You 💗</h2>
+    <p style="text-align:center;margin-bottom:25px;">
+        Click each note to open a little message.
+    </p>
+
+    <div class="notes">
+
+        <button class="note" onclick="showNote(0)">
+            <h3>♡ Note 1</h3>
+            My Favorite Person
+        </button>
+
+        <button class="note" onclick="showNote(1)">
+            <h3>♡ Note 2</h3>
+            I Miss You
+        </button>
+
+        <button class="note" onclick="showNote(2)">
+            <h3>♡ Note 3</h3>
+            A Little Reminder
+        </button>
+
+        <button class="note" onclick="showNote(3)">
+            <h3>♡ Note 4</h3>
+            My Promise
+        </button>
+
+    </div>
+</section>
+
+<section>
+    <h2>My Promises To You ♡</h2>
+
+    <ul class="promises">
+        <li>I promise to keep loving youuuu babyyy, forever 
+            and ever. No matter howw much time passes babyyy or  what life brings 
+            I'll keep choosing you, caring for you and loving you with all my heart
+            ALWAYS YOUUUU BABYYYYY MWAAAAAAAAAA!!.</li>
+
+        <li>I promise that I never stop trying to become a better person for you, no
+             because you ask me to, but because you inspire me to be. Every single day,
+            I'll do my best to love you the way you deserve to be loved, with honesty,
+            patience, loyalty, and consistency. You mean so much to me, and I want to 
+            be someone who gives you peace, makes you feel safe, and reminds you everyday
+            How deeply you're loved. I know I wont be perfect, but I promise I'll always
+            choose us, keep learning from my mistakes, and never stop putting effort into
+            making you happy..</li>
+        
+    </ul>
+</section>
+
+<section class="final">
+    <div class="big-heart">♡</div>
+
+    <h2>One Last Thing, Babyyy</h2>
+
+    <p class="letter">
+        I may not be the perfect boyfriend,
+        but I genuinely want to become better.
+        I don't want you to feel alone in this relationship.
+        I want us to grow together, understand each other,
+        and continue choosing each other every day.
+
+        <br><br>
+
+        I'm really sorry, babyyyy.
+        Thank you for being part of my life.
+        I love you so much and I hope I can
+        show you that more and more every day.
+    </p>
+
+    <button onclick="virtualHug()">
+        Send You A Virtual Hug ♡
+    </button>
+
+    <p id="hug" style="margin-top:20px;color:#c65380;"></p>
+</section>
+
+<footer>
+    Made with all my love for you, babyyy ♡
+    <br>
+    Forever grateful to have you.
+</footer>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2 id="noteTitle"></h2>
+        <p id="noteMessage"></p>
+        <button onclick="closeNote()">Close ♡</button>
+    </div>
+</div>
+
+<script>
+
+// Floating hearts animation
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "♡";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createHeart, 500);
+
+
+// Scroll to letter
+function scrollToLetter() {
+    document.getElementById("letter").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+// Interactive love notes
+const titles = [
+    "My Favorite Person ♡",
+    "I Miss You ♡",
+    "A Little Reminder ♡",
+    "My Promise ♡"
+];
+
+const messages = [
+    "Babyyy, you're someone I never want to take for granted. I'm thankful for every moment we share. You deserve to feel special every single day.",
+
+    "I miss talking to you, hearing your stories, laughing with you, and spending time with you. I want to make more beautiful memories together.",
+
+    "Please never think that you're asking for too much when you want my attention. Your feelings matter. Your time matters. YOU matter to me.",
+
+    "I promise to make more time for you, communicate better, listen more, and show you through my actions that I truly love and appreciate you."
+];
+
+function showNote(index) {
+    document.getElementById("noteTitle").innerText = titles[index];
+
+    document.getElementById("noteMessage").innerText =
+        messages[index];
+
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closeNote() {
+    document.getElementById("popup").style.display = "none";
+}
+
+
+// Virtual hug
+function virtualHug() {
+    document.getElementById("hug").innerText =
+        "Sending you the biggest hug ever, babyyyy! I love you so much ♡";
+}
+
+</script>
+
+</body>
+</html>
